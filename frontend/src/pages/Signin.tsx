@@ -20,7 +20,7 @@ export function Signin() {
     }
 
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/v1/signin`, { username, password });
+      const response:any = await axios.post(`${BACKEND_URL}/api/v1/signin`, { username, password });
       const jwt = response.data.token;
       localStorage.setItem("token", jwt);
       navigate("/dashboard");
@@ -37,7 +37,7 @@ export function Signin() {
         <h1 className="text-2xl font-bold text-center mb-6">Welcome Back</h1>
 
         
-        <div className="space-y-4 w-10">
+        <div className="space-y-4">
           <Input reference={usernameRef} placeholder="Username" />
           <Input reference={passwordRef} placeholder="Password"  />
         </div>
